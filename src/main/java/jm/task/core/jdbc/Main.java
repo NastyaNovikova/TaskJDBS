@@ -8,18 +8,18 @@ import java.util.List;
 //git push -u origin test
 public class Main {
     public static void main(String[] args) {
-        UserService table = new UserServiceImpl();
-        table.createUsersTable();
-        table.saveUser("Nastya", "Nov", (byte) 22);
-        table.saveUser("Ivan", "Fedun", (byte) 43);
-        table.saveUser("Katya", "Didok", (byte) 8);
-        table.saveUser("Tom", "Utochka", (byte) 15);
-        List<User> list = table.getAllUsers();
+        UserService userService = new UserServiceImpl();
+        userService.createUsersTable();
+        userService.saveUser("Nastya", "Nov", (byte) 22);
+        userService.saveUser("Ivan", "Fedun", (byte) 43);
+        userService.saveUser("Katya", "Didok", (byte) 8);
+        userService.saveUser("Tom", "Utochka", (byte) 15);
+        List<User> list = userService.getAllUsers();
         for (User i: list){
             System.out.println(i.toString());
         }
 
-        table.cleanUsersTable();
-        table.dropUsersTable();
+        userService.cleanUsersTable();
+        userService.dropUsersTable();
     }
 }
